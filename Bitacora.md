@@ -24,6 +24,61 @@ Movimiento Axis:
 
     * Función por default de UE5 "Stop Jump".
 
-* Input (Action Mappings) **
+* Input (Action Mappings) **AgacharInput**: sistema de agachado del jugador.
+
+    * Condición para evitar cambiar de estado si ya se encuentra en uno.
+        * IsCorriendo?
+
+    * Presionar:
+
+        * Velocidad de caminado a 125.0.
+
+        * Variable "IsAgachado?" activada.
+
+    * Soltar: 
+
+        * Velocidad de caminado a 500 (Velocidad base).
+
+        * Variable "IsAgachado?" desactivada.
+
+* Input (Action Mappings) **CorrerInput**: sistema de correr del jugador.
+
+    * Condición para evitar cambiar de estado si ya se encuentra en uno.
+        * IsAgachado?
+    
+    * Presionar:
+
+        * Velocidad de caminado a 1000.0.
+
+        * Variable "IsCorriendo?" activada.
+
+    * Soltar:
+
+        * Velocidad de caminado a 500.0(Velocidad base).
+
+        * Variable "IsCorriendo?" desactivada.
+
+
+* Input (Action Mappings) **GanchoInput**: sistema para lanzar un gancho que al impactar una superficie física lanzará al jugador hacia dicha dirección. Se mantendría presionado para poder apuntar mejor y al soltar lanzaría el proyectil.
+
+    * Presionar: 
+
+        * Variable "CanMoveP?" desactivada.
+
+    * Soltar:
+
+        * Line Trace By Channel
+            
+            * Lanza una linea de reconocimiento desde el punto de acople "Gancho Inicio".
+
+            * Su punto de acople final es: "World Location" de "Gancho Inicio" sumado a la multiplicación del "Forward Vector" por la distancia máxima que se desee.
+
+        * Se comprueba si la Line Trace chocó con una superficie para llamar al evento "Gancho".
+
+* Evento Gancho: Recibirá el punto de impacto del Line Trace para envíar al personaje o viceversa.
+    
+    * Se va cambiando la posición del personaje mediante un "Set Actor Location".
+
+    * TimerLine que mediante una gráfica cosenoidal la cual irá desde la posición inicial hasta la final sin ir linealmente.
 
 ## Día: 27 de enero del 2024
