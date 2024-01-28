@@ -12,23 +12,17 @@ Movimiento Axis:
     * **LadosInput**: Movimiento hacia la derecha y hacia la izquierda.
         * Verificación si la variable "CanMoveP?" está activa para agregar movimiento al input.
 
-* Input (Axis Mappings)**CameraHorz**: movimiento de camara para el personaje. (Vista tercera persona)
-    
-    * Condicionamiento provisional por si se necesita posteriormente.
+Input (Axis Mappings)**CameraHorz**: movimiento de camara para el personaje. (Vista tercera persona)
+* Condicionamiento provisional por si se necesita posteriormente.
+* Agrega movimiento al controlador de Yaw.
 
-    * Agrega movimiento al controlador de Yaw.
+Input (Action Mappings) **SaltoInput**: salto del jugador.
+* Función por default de UE5 "Jump".
+* Función por default de UE5 "Stop Jump".
 
-* Input (Action Mappings) **SaltoInput**: salto del jugador.
-    
-    * Función por default de UE5 "Jump".
-
-    * Función por default de UE5 "Stop Jump".
-
-* Input (Action Mappings) **AgacharInput**: sistema de agachado del jugador.
-
-    * Condición para evitar cambiar de estado si ya se encuentra en uno.
+Input (Action Mappings) **AgacharInput**: sistema de agachado del jugador.
+* Condición para evitar cambiar de estado si ya se encuentra en uno.
         * IsCorriendo?
-
     * Presionar:
 
         * Velocidad de caminado a 125.0.
@@ -41,9 +35,8 @@ Movimiento Axis:
 
         * Variable "IsAgachado?" desactivada.
 
-* Input (Action Mappings) **CorrerInput**: sistema de correr del jugador.
-
-    * Condición para evitar cambiar de estado si ya se encuentra en uno.
+Input (Action Mappings) **CorrerInput**: sistema de correr del jugador.
+* Condición para evitar cambiar de estado si ya se encuentra en uno.
         * IsAgachado?
     
     * Presionar:
@@ -59,26 +52,34 @@ Movimiento Axis:
         * Variable "IsCorriendo?" desactivada.
 
 
-* Input (Action Mappings) **GanchoInput**: sistema para lanzar un gancho que al impactar una superficie física lanzará al jugador hacia dicha dirección. Se mantendría presionado para poder apuntar mejor y al soltar lanzaría el proyectil.
+Input (Action Mappings) **GanchoInput**: sistema para lanzar un gancho que al impactar una superficie física lanzará al jugador hacia dicha dirección. Se mantendría presionado para poder apuntar mejor y al soltar lanzaría el proyectil.
 
-    * Presionar: 
+* Presionar: 
 
-        * Variable "CanMoveP?" desactivada.
+    * Variable "CanMoveP?" desactivada.
 
-    * Soltar:
+* Soltar:
 
-        * Line Trace By Channel
+    * Line Trace By Channel
             
-            * Lanza una linea de reconocimiento desde el punto de acople "Gancho Inicio".
+        * Lanza una linea de reconocimiento desde el punto de acople "Gancho Inicio".
 
-            * Su punto de acople final es: "World Location" de "Gancho Inicio" sumado a la multiplicación del "Forward Vector" por la distancia máxima que se desee.
+        * Su punto de acople final es: "World Location" de "Gancho Inicio" sumado a la multiplicación del "Forward Vector" por la distancia máxima que se desee.
 
         * Se comprueba si la Line Trace chocó con una superficie para llamar al evento "Gancho".
 
-* Evento Gancho: Recibirá el punto de impacto del Line Trace para envíar al personaje o viceversa.
-    
-    * Se va cambiando la posición del personaje mediante un "Set Actor Location".
+Evento Gancho: Recibirá el punto de impacto del Line Trace para envíar al personaje o viceversa.
+* Se va cambiando la posición del personaje mediante un "Set Actor Location".
 
-    * TimerLine que mediante una gráfica cosenoidal la cual irá desde la posición inicial hasta la final sin ir linealmente.
+* Timer Line que mediante una gráfica cosenoidal la cual irá desde la posición inicial hasta la final sin ir linealmente.
 
 ## Día: 27 de enero del 2024
+
+Mejora en el impacto del Line Trace
+* Usa el "Out Hit Location" para enviarselo al evento "Gancho".
+
+* Envía el tipo de objeto al que impactó el Line Trace.
+
+**Blender Models:**
+* Personaje del jugador:
+    * personaje completado en su modelo (Faltan los huesos y animaciones).
