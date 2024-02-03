@@ -83,3 +83,10 @@ Mejora en el impacto del Line Trace
 **Blender Models:**
 * Personaje del jugador:
     * personaje completado en su modelo (Faltan los huesos y animaciones).
+
+
+## Día: 30 de enero del 2024
+
+Agregados los huesos y pintado el peso dentro de los meshes
+
+## Dïa: 3 de febrero del 2024
