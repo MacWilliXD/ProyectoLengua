@@ -89,4 +89,18 @@ Mejora en el impacto del Line Trace
 
 Agregados los huesos y pintado el peso dentro de los meshes
 
-## Dïa: 3 de febrero del 2024
+## Día: 3 de febrero del 2024
+
+**Animaciones**
+(Se deben mejorar)
+
+* [x] Idle
+* [x] Walk
+* [x] Run (Posible mejora)
+* [] Jump
+* [] Grappling
+
+
+**Outliners**
+
+Agregado al proyecto para que se vea una linea negra alrededor de los modelos de los personajes y estruturas. Puro estilo cartoon.
