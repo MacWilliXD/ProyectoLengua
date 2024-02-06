@@ -104,3 +104,14 @@ Agregados los huesos y pintado el peso dentro de los meshes
 **Outliners**
 
 Agregado al proyecto para que se vea una linea negra alrededor de los modelos de los personajes y estruturas. Puro estilo cartoon.
+
+
+## Día: 5 de febrero del 2024
+**Los agregados son placeholders**
+
+Agregado el modelo y las animaciones a unreal engine
+
+Añadido un blueprint de animación
+
+Añadido un blendspace de animación para obtener la velocidad del jugador y cambiar de animación de Idle -> Walk -> Run
+
