@@ -97,8 +97,6 @@ Agregados los huesos y pintado el peso dentro de los meshes
 * [x] Idle
 * [x] Walk
 * [x] Run (Posible mejora)
-* [] Jump
-* [] Grappling
 
 
 **Outliners**
@@ -115,3 +113,9 @@ Añadido un blueprint de animación
 
 Añadido un blendspace de animación para obtener la velocidad del jugador y cambiar de animación de Idle -> Walk -> Run
 
+
+## Día: 08 de febrero del 2024
+
+Añadido sistema de cambio de animaciones y mejorado para que pudiera cambiar entre diferentes animaciones (fuera de la caminata)
+
+Añadido animación de agachado
