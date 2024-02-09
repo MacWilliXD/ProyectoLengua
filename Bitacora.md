@@ -117,5 +117,17 @@ Añadido un blendspace de animación para obtener la velocidad del jugador y cam
 ## Día: 08 de febrero del 2024
 
 Añadido sistema de cambio de animaciones y mejorado para que pudiera cambiar entre diferentes animaciones (fuera de la caminata)
+* Conexión entre Idle/Walk/Run con la maquina de animación para agachado (con espera de la animación de Idle-Agachado para hacer que la velocidad cambie entre movimiento o no agachado)
 
 Añadido animación de agachado
+
+Añadido animación de idle agachado (solo al modelo)
+
+Ajustes al postprocesado
+
+Cambio a la camara
+* Sigue al jugador
+* Vista bloqueada (rotación)
+
+Movimiento del personaje
+* Personaje mira conforme al mouse para girar
